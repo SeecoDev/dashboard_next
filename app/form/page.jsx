@@ -1,5 +1,6 @@
 "use client";
 
+import PieComponent from "@/components/PiePerron";
 import TablePerrona from "@/components/TablePerrona";
 import React, { useState } from "react";
 
@@ -253,6 +254,7 @@ export default (Form) => {
               type="submit"
               value="Calcular"
             ></input>
+            <PieComponent imc={imc} masaOseaPorcentaje={masaOseaPorcentaje} masaResidualPorcentaje={masaOseaPorcentaje} masaMuscularPorcentaje={masaMuscularPorcentaje}></PieComponent>
           </div>
         </form>
       </div>
