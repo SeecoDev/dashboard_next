@@ -1,37 +1,56 @@
-import React from 'react';
-import { Pie } from 'react-chartjs-2';
+import React, { useEffect, useRef} from 'react'
+import { Chart } from 'chart.js/auto';
 
+const ChartComp = (props) => {
+  
+  const chartRef = useRef(null);
 
-const PieComponent = (props) => {
+    useEffect(() => {
+      const {grasaCorp, masaOpor, masaRpor, masaMus} = props
+    
+    const ctx = document.getElementById('chartComp');
 
-    const {imc, masaOseaPorcentaje, masaResidualPorcentaje, masaMuscularPorcentaje} = props;
-    const data = {
-        labels: [
-          'Porcentaje de Grasa',
-          'Masa Osea',
-          'Masa Residual',
-          'Masa Muscular'
-        ],
+    if (chartRef.current) {
+      chartRef.current.destroy();
+    }
+  
+     const newChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['Masa grasa', 'Masas ósea', 'Masa residual', 'Masa muscular'],
         datasets: [{
-          label: 'Porcentaje de peso (%)',
-          data: [imc, masaOseaPorcentaje, masaResidualPorcentaje, masaMuscularPorcentaje],
+          label: 'Porcentaje respecto al peso',
+          data: [grasaCorp, masaOpor, masaRpor, masaMus],
           backgroundColor: [
-            '#2F7FFF',
-            '#3F88FF',
-            '#4F92FF',
-            '#5F9CFF',
+            '#1D3354',
+            '#467599',
+            '#467599',
+            '#E9FFF9',
           ],
-          hoverOffset: 4
+          borderWidth: 2
         }]
-      };
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
 
-      return (
-        <div>
-            <h1>Porcentaje del peso</h1>
-            <Pie data={data}></Pie>
-        </div>
-      );
-      
+    chartRef.current = newChart;
+    }, [props ])
+    
+    
+  return (
+      <canvas id='chartComp' width='300' height='300'></canvas>
+  )
 }
 
-export default PieComponent;
+export default ChartComp;
+
+
+/*
+
+*/

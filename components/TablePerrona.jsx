@@ -1,6 +1,6 @@
 const  TablePerrona = (props) => {
 
-  const {porcentajeGrasaKg, imc, masaOseaPorcentaje, masaOsea, masaResidual, masaResidualPorcentaje, masaMusuclarKg, masaMuscularPorcentaje} = props;
+  const {porcentajeGrasaKg, porcentajeGrasa, masaOseaPorcentaje, masaOsea, masaResidual, masaResidualPorcentaje, masaMuscularKg, masaMuscularPorcentaje} = props;
 
   return (
     <div>
@@ -21,7 +21,7 @@ const  TablePerrona = (props) => {
         <tbody>
           <tr>
             <td className="px-6 py-1">Masa Grasa</td>
-            <td className="px-6 py-1">{imc}</td>
+            <td className="px-6 py-1">{porcentajeGrasa}</td>
             <td className="px-6 py-1">{porcentajeGrasaKg}</td>
           </tr>
           <tr>
@@ -37,7 +37,7 @@ const  TablePerrona = (props) => {
           <tr>
             <td className="px-6 py-1">Masa Muscular</td>
             <td className="px-6 py-1">{masaMuscularPorcentaje}</td>
-            <td className="px-6 py-1">{masaMusuclarKg}</td>
+            <td className="px-6 py-1">{masaMuscularKg}</td>
           </tr>
         </tbody>
       </table>
