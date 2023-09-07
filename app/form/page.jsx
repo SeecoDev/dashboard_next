@@ -13,11 +13,13 @@ export default (Form) => {
   };
 
   return (
-    <div className="bg-white h-screen justify-start pl-8 pt-10 flex-col" >
+    <div className="bg-white h-screen justify-start container mx-auto grid w-screen" >
       <h1 className=" text-4xl tracking-wide leading-none text-[#2176FF]">
         Form
       </h1>
-      <FormPerron enviarResultados={recibirResultados} />
+      <div className="flex-col columns-1">
+        <FormPerron enviarResultados={recibirResultados} />
+      </div>
       {resultados != null && (
         <div className="flex-col">
           <div className="p-4">
@@ -33,10 +35,10 @@ export default (Form) => {
             />
           
             <div className='w-[300px] mx-auto mt-4 bg-tercero rounded-xl'>{/*grafica */}
-          <ChartComp grasaCorp = {resultados.porcentajeGrasa}
-          masaOpor = {resultados.masaOseaPorcentaje}
-          masaRpor = {resultados.masaResidualPorcentaje}
-          masaMus = {resultados.masaMuscularPorcentaje} />
+          <ChartComp porcentajeGrasa = {resultados.porcentajeGrasa}
+          porcentajeOsea = {resultados.masaOseaPorcentaje}
+          porcentajeResidual = {resultados.masaResidualPorcentaje}
+          porcentajeMuscular = {resultados.masaMuscularPorcentaje} />
               </div>
         </div>
       
