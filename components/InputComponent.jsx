@@ -8,6 +8,7 @@ function InputComponent({label, value, onChange, placeholder, name}){
             name={name}
             placeholder={placeholder}
             value={value}
+            required
             onChange={onChange}
           />
         </div>

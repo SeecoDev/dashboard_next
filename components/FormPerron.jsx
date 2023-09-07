@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import SelectComponent from "./SelectComponent";
 import InputComponent from "./InputComponent";
 
-function FormPerron({ enviarResultados }) {
+function FormPerron({ sendResults }) {
 
   const [inputValues, setInputValues] = useState({
     height: "",
@@ -87,7 +87,7 @@ function FormPerron({ enviarResultados }) {
     const muscularWeight =
       inputValues.weight - boneMass - residualMass - fatWeight;
 
-    const resultados = {
+    const results = {
       boneMass: boneMass,
       residualMass: residualMass,
       density: density,
@@ -98,7 +98,7 @@ function FormPerron({ enviarResultados }) {
       muscularMassPercentage: muscularMass,
       muscularWeight: muscularWeight,
     };
-    enviarResultados(resultados);
+    sendResults(results);
   };
 
   return (
