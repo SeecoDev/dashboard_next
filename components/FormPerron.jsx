@@ -23,11 +23,12 @@ function FormPerron({enviarResultados}) {
 
   const handleInputChange= (e) => {
     const {name, value, type} = e.target;
-    console.log(value);
-    console.log(name);
-    console.log(type);
-    let parsedValue = parseFloat(value);
-    console.log(parsedValue)
+
+    let parsedValue = value;
+    
+    if (type === "number" && value !== "") {
+      parsedValue = parseFloat(value);
+    }
     setInputValues((prevValues) => ({
       ...prevValues,
       [name]: parsedValue,
@@ -90,7 +91,7 @@ function FormPerron({enviarResultados}) {
         densidad: density,
         porcentajeGrasa: fatPercentage,
         masaOseaPorcentaje: boneMassPercentage,
-       residualMassPorcentaje: residualMassPercentage,
+        masaResidualPorcentaje: residualMassPercentage,
         porcentajeGrasaKg: fatWeight,
         masaMuscularPorcentaje: muscularMass,
         masaMuscularKg: muscularWeight,
@@ -109,31 +110,31 @@ function FormPerron({enviarResultados}) {
         )}
         <div className="pb-2 flex-wrap" >
         <hr></hr>
-          <SelectComponent label="Sexo" value={inputValues.gender} placeholder="Sexo" onChange={handleInputChange}
+          <SelectComponent label="Sexo" name="gender" value={inputValues.gender} placeholder="Sexo" onChange={handleInputChange}
             options={[
             {label: "Hombre", value:"1"},
             {label: "Mujer", value:"2"},
           ]}/>
-          <InputComponent label="Edad" placeholder="Edad" type="number" value={inputValues.age} onChange={handleInputChange}/>
+          <InputComponent label="Edad" placeholder="Edad" name="age" type="number" value={inputValues.age} onChange={handleInputChange}/>
         </div>
         <div className="pb-2">
         <hr></hr>
-          <InputComponent label="Talla (m)" placeholder="Talla o Altura" type="number" value={inputValues.height} onChange={handleInputChange}/>
-          <InputComponent label="Peso (kg)" placeholder="Peso" type="number" value={inputValues.weight} onChange={handleInputChange}/>
+          <InputComponent label="Talla (m)" placeholder="Talla o Altura" name="height" type="number" value={inputValues.height} onChange={handleInputChange}/>
+          <InputComponent label="Peso (kg)" placeholder="Peso" name="weight" type="number" value={inputValues.weight} onChange={handleInputChange}/>
         </div>
         <div className="pb-2">
-        <InputComponent label="Biciptal (mm)" placeholder="Biciptal" type="number" value={inputValues.biciptal} onChange={handleInputChange}/>
-        <InputComponent label="Triciptal (mm)" placeholder="Triciptal" type="number" value={inputValues.triciptal}  onChange={handleInputChange}/>
+        <InputComponent label="Biciptal (mm)" placeholder="Biciptal" name="biciptal" type="number" value={inputValues.biciptal} onChange={handleInputChange}/>
+        <InputComponent label="Triciptal (mm)" placeholder="Triciptal" name="triciptal" type="number" value={inputValues.triciptal}  onChange={handleInputChange}/>
         </div>
         <div className="pb-2">
           <hr></hr>
-        <InputComponent label="Subescapular (mm)" placeholder="Subescapular" type="number" value={inputValues.subscapular} onChange={handleInputChange}/>
-        <InputComponent label="Supralaico (mm)" placeholder="Supralaico" type="number" value={inputValues.supralaeal} onChange={handleInputChange}/>
+        <InputComponent label="Subescapular (mm)" placeholder="Subescapular" name="subscapular" type="number" value={inputValues.subscapular} onChange={handleInputChange}/>
+        <InputComponent label="Supralaico (mm)" placeholder="Supralaico" name="supralaic" type="number" value={inputValues.supralaic} onChange={handleInputChange}/>
         </div>
         <div className="pb-2">
         <hr></hr>
-        <InputComponent label="Biestoloideo (cm)" placeholder="Biestoloideo" type="number" value={inputValues.bistoloid} onChange={handleInputChange}/>
-        <InputComponent label="Femur (cm)" placeholder="Femur" type="number" value={inputValues.femur} onChange={handleInputChange}/>
+        <InputComponent label="Biestoloideo (cm)" placeholder="Biestoloideo" name="bistoloid" type="number" value={inputValues.bistoloid} onChange={handleInputChange}/>
+        <InputComponent label="Femur (cm)" placeholder="Femur" type="number" name="femur" value={inputValues.femur} onChange={handleInputChange}/>
         </div>
         <div className="pb-2 py-3 px-4"> 
           <hr></hr>
