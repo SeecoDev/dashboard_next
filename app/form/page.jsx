@@ -13,35 +13,35 @@ export default (Form) => {
   };
 
   return (
-    <div className="bg-white h-screen justify-start container mx-auto grid w-screen" >
+    <div className="bg-white h-screen justify-start container mx-auto grid w-screen columns-2" >
       <h1 className=" text-4xl tracking-wide leading-none text-[#2176FF]">
         Form
       </h1>
-      <div className="flex-col columns-1">
+      <div className="flex-row">
         <FormPerron enviarResultados={recibirResultados} />
       </div>
       {resultados != null && (
-        <div className="flex-col">
-          <div className="p-4">
+        <div className="columns-2">
+          <div className="p-4 mx-auto">
             <TablePerrona
-              porcentajeGrasa={resultados.porcentajeGrasa}
-              porcentajeGrasaKg={resultados.porcentajeGrasaKg}
-              masaOsea={resultados.masaOsea}
-              masaOseaPorcentaje={resultados.masaOseaPorcentaje}
-              masaResidual={resultados.masaResidual}
-              masaResidualPorcentaje={resultados.masaResidualPorcentaje}
-              masaMuscularKg={resultados.masaMuscularKg}
-              masaMuscularPorcentaje={resultados.masaMuscularPorcentaje}
+              fatPercentage={resultados.fatPercentage}
+              fatWeight={resultados.fatWeight}
+              boneMass={resultados.boneMass}
+              boneMassPercentage={resultados.boneMassPercentage}
+              residualMass={resultados.residualMass}
+              residualMassPercentage={resultados.residualMassPercentage}
+              muscularWeight={resultados.muscularWeight}
+              muscularMassPercentage={resultados.muscularMassPercentage}
             />
           
-            <div className='w-[300px] mx-auto mt-4 bg-tercero rounded-xl'>{/*grafica */}
-          <ChartComp porcentajeGrasa = {resultados.porcentajeGrasa}
-          porcentajeOsea = {resultados.masaOseaPorcentaje}
-          porcentajeResidual = {resultados.masaResidualPorcentaje}
-          porcentajeMuscular = {resultados.masaMuscularPorcentaje} />
+          <div className='w-[300px] mx-auto mt-4 bg-tercero rounded-xl'>
+          <ChartComp 
+            fatPercentage = {resultados.fatPercentage}
+            boneMassPercentage = {resultados.boneMassPercentage}
+            residualMassPercentage = {resultados.residualMassPercentage}
+            muscularMassPercentage = {resultados.muscularMassPercentage} />
               </div>
-        </div>
-      
+          </div>
         </div>
       )}
     </div>

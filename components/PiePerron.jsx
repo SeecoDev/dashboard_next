@@ -6,7 +6,7 @@ const ChartComp = (props) => {
   const chartRef = useRef(null);
 
     useEffect(() => {
-      const {porcentajeGrasa, porcentajeOsea, porcentajeResidual, porcentajeMuscular} = props
+      const {fatPercentage, boneMassPercentage, residualMassPercentage, muscularMassPercentage} = props
     
     const ctx = document.getElementById('chartComp');
 
@@ -20,14 +20,14 @@ const ChartComp = (props) => {
         labels: ['Masa grasa', 'Masas ósea', 'Masa residual', 'Masa muscular'],
         datasets: [{
           label: 'Porcentaje respecto al peso',
-          data: [porcentajeGrasa, porcentajeOsea, porcentajeResidual, porcentajeMuscular],
+          data: [fatPercentage, boneMassPercentage, residualMassPercentage, muscularMassPercentage],
           backgroundColor: [
             '#1D3354',
             '#467599',
             '#467599',
             '#E9FFF9',
           ],
-          borderWidth: 2
+          borderWidth: 1
         }]
       },
       options: {
