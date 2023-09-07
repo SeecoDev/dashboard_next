@@ -33,13 +33,17 @@ Este proyecto tiene como objetivo principal explorar y aplicar las tecnologías 
 El proyecto no tiene como objetivo principal proporcionar asesoramiento médico, diagnóstico o tratamiento médico a los usuarios. Tampoco pretende reemplazar a un profesional de la salud calificado ni ofrece garantías sobre la precisión o la aplicación clínica de los datos recopilados. Además, el proyecto no busca almacenar ni gestionar datos médicos sensibles de manera segura ni cumplir con regulaciones específicas de protección de datos en la atención médica.
 
 # Background
-## React: Utilizaremos React como la biblioteca principal para construir la interfaz de usuario. React es ampliamente conocido por su capacidad para crear componentes reutilizables y su facilidad de desarrollo.
+## React 
+Utilizaremos React como la biblioteca principal para construir la interfaz de usuario. React es ampliamente conocido por su capacidad para crear componentes reutilizables y su facilidad de desarrollo.
 
-## Next.js: Elegimos Next.js como el marco de desarrollo de React debido a su enfoque en el rendimiento y la velocidad. Además, Next.js nos permite implementar la representación del lado del servidor (SSR) y la generación de sitios estáticos (SSG) para mejorar la eficiencia de la aplicación.
+## Next.js
+Elegimos Next.js como el marco de desarrollo de React debido a su enfoque en el rendimiento y la velocidad. Además, Next.js nos permite implementar la representación del lado del servidor (SSR) y la generación de sitios estáticos (SSG) para mejorar la eficiencia de la aplicación.
 
-## Chart.js: Para crear la gráfica de pastel, integraremos Chart.js, una potente biblioteca de gráficos que nos permitirá visualizar la composición corporal de manera intuitiva.
+## Chart.js
+Para crear la gráfica de pastel, integraremos Chart.js, una potente biblioteca de gráficos que nos permitirá visualizar la composición corporal de manera intuitiva.
 
-## Estilización: Utilizaremos TailwindCSS para el diseño y la estilización de la interfaz de usuario. Podemos considerar preprocesadores como Sass o utilizar bibliotecas de diseño como Bootstrap para mejorar la apariencia y la usabilidad.
+## Estilización
+Utilizaremos TailwindCSS para el diseño y la estilización de la interfaz de usuario. Podemos considerar preprocesadores como Sass o utilizar bibliotecas de diseño como Bootstrap para mejorar la apariencia y la usabilidad.
 
 # Requerimientos 
 Los requerimientos son los siguientes:
